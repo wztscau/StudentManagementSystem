@@ -1,0 +1,69 @@
+{
+	"最新动态": {
+		"router": "/news"
+	},
+	"个人信息管理": {
+		"ico": "user",
+		"router": "/person-data",
+
+		"修改密码": {
+			"router": "/password-modification"
+		},
+		"上传头像": {
+			"router": "/upload-headimg"
+		}
+	},
+	"账户录入/管理": {
+		"ico": "pencil",
+		"router": "/information-profile",
+
+		"信息录入": {
+			"router": "/information-input"
+		},
+		"管理账户": {
+			"router": "/information-management"
+		}
+	},
+	"程序员世界": {
+		"ico": "pencil-square-o",
+		"router": "/programmer",
+
+		"发表新文章": {
+			"router": "/article-publishment"
+		},
+		"文章管理": {
+			"router": "/article-management"
+		},
+		"文章分类": {
+			"router": "/"
+		}
+	},
+	"成绩系统": {
+		"ico": "superscript",
+		"router": "/",
+
+		"成绩查询": {
+			"router": "/"
+		},
+		"成绩录入": {
+			"router": "/"
+		},
+		"提交作业": {
+			"router": "/"
+		},
+		"评改作业": {
+			"router": "/"
+		},
+		"教师评价": {
+			"router": "/"
+		}
+	},
+	"公告管理": {
+		"ico": "bullhorn",
+		"router": "/"
+	},
+	"文件管理": {
+		"ico": "picture-o",
+		"router": "/"
+	}
+}

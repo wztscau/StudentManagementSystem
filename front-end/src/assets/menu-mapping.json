@@ -1,0 +1,21 @@
+{
+	"news": "最新动态",
+	"person": "个人信息管理",
+	"password": "修改密码",
+	"headimg": "上传头像",
+	"account": "账户录入/管理",
+	"information": "信息录入",
+	"maccount": "管理账户",
+	"programmer": "程序员世界",
+	"publish": "发表新文章",
+	"article": "文章管理",
+	"classify": "文章分类",
+	"achievement": "成绩系统",
+	"query": "查询成绩",
+	"inachieve": "录入成绩",
+	"upload": "提交作业",
+	"correcting": "评改作业",
+	"evaluate": "教师评价",
+	"announce": "公告管理",
+	"file": "文件管理"
+}

@@ -1,0 +1,23 @@
+{
+	"network-error": "网络异常，请稍后重试",
+	"wrong-password-disabled": "用户名或密码错误或账号已被禁用",
+	"wrong-password": "密码错误",
+	"password-not-the-same": "两次输入密码不一致",
+	"input-correct-password": "请输入正确的密码",
+	"success-modify-password": "修改密码成功",
+	"password-should-different": "原密码和新密码不能相同",
+	"enter-correct-message": "请输入正确的信息",
+	"exist-this-user": "该用户已存在",
+	"commit-first": "请先完成编辑中的内容",
+	"modify-succeeded": "修改成功",
+	"input-title-first": "请先输入文章标题",
+	"input-content-first": "请先输入正文内容",
+	"sort-first": "请先选择分类",
+	"invalid-image-type": "不是图片类型的文件",
+	"img-le-5M": "图片大小不能大于5M",
+	"upload-img-success": "图片上传成功",
+	"delete-article-success": "删除文章成功",
+	"add-batch-success": "新增批次成功",
+	"top-article-success": "置顶文章成功",
+	"untop-article-success": "取消置顶文章成功"
+}

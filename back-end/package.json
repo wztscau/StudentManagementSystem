@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.5",
+    "jquery": "^3.2.1",
+    "mysql": "^2.14.0"
+  }
+}
