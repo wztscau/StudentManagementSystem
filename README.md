@@ -14,9 +14,10 @@ Nodejs6.0.1 + Vue-cli2.8.2 + Sublime text3 + Webpack2.6.1 + Nginx1.12.1 + MySQL 
 - cropper: 基于jquery的图片裁剪插件
 
 #### 后端：
-- express： 一个简洁而灵活的 node.js Web应用框架
-- bluebird： 便于异步编程的Promise集成工具，可为fs类似的包含大量异步操作的模块提供promise操作
-- mysql： 用于node连接mysql数据库的模块
+- express: 一个简洁而灵活的 node.js Web应用框架
+- express-session: 本来是express中的一部分，4.0之后将很多模块独立出去
+- bluebird: 便于异步编程的Promise集成工具，可为fs类似的包含大量异步操作的模块提供promise操作
+- mysql: 用于node连接mysql数据库的模块
 
 ## 功能模块
 
@@ -48,7 +49,17 @@ Nodejs6.0.1 + Vue-cli2.8.2 + Sublime text3 + Webpack2.6.1 + Nginx1.12.1 + MySQL 
 5. **router-view无法自主刷新，只能折衷于先跳转到一个空白路由_blank，再跳回来当前路由**
 
 6. **数据刷新后立刻对DOM进行访问的问题**
-
 	
+	在数据刷新后，vue会对组件立即进行重新渲染，但是渲染需要一定的时间，如果在渲染完成之后立刻对DOM进行访问（如jQuery的查询），会得不到该DOM，因此需要加上vm.$nextTick(callback)，然后对DOM的操作和访问都在callback里面完成
+	
+7. **vue实例里面的data中的对象通过增加属性不能响应的问题**
+
+	由于vue的限制，直接通过对数组的下标或增加对象上的方法改变值不能得到预期的效果，view得不到更新。vue1.x可以用vm.$set方法解决该问题，但是自2.0以后便不支持该形式，因此比较好的解决方法是先声明data的对象的所有属性，然后改变值的时候就能够得到响应。
+	
+8. **post请求的数据接收以及413错误**
+
+	在node中，在默认设置下，是不能获得post的请求数据的，需要引入body-parser模块以及设置express.use({ bodyParser.urlecoded({ extended: true }) })。而且默认情况下，过大的数据请求会被服务器拒绝，可以有两种方法解决：
+	1. 设置bodyParser.urlencoded({ limit: 最大请求体如'5mb' })
+	2. 使用Nginx反向代理服务器设置client_max_body_size最大请求体
 
 ## 待改进地方
