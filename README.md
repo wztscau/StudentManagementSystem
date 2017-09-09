@@ -44,7 +44,7 @@ Nodejs6.0.1 + Vue-cli2.8.2 + Sublime text3 + Webpack2.6.1 + Nginx1.12.1 + MySQL 
 
 		在将数组中对象克隆的时候为对象新增一个内置属性_originIndex，这样不管数组顺序如何改变，只要获得该对象就可以获得其原本的坐标，然后就可以将_originIndex，emit给父组件，让父组件获得对应的对象
 		
-4. **router-view不能响应@click事件，如果想在上面使用click事件，还是要用回<a>标签，click事件中实现$router的跳转**
+4. **router-view不能响应@click事件，如果想在上面使用click事件，还是要用回\<a\>标签，click事件中实现$router的跳转**
 
 5. **router-view无法自主刷新，只能折衷于先跳转到一个空白路由_blank，再跳回来当前路由**
 
@@ -63,3 +63,6 @@ Nodejs6.0.1 + Vue-cli2.8.2 + Sublime text3 + Webpack2.6.1 + Nginx1.12.1 + MySQL 
 	2. 使用Nginx反向代理服务器设置client_max_body_size最大请求体
 
 ## 待改进地方
+- 需要尽量减少对DOM的操作，尽管有些复杂的DOM需要用到jQuery去完成，不过能用数据驱动的view尽量用vue实现。而且vue中的事件不能被jQuery克隆，应该还是谨慎在vue中使用jQuery
+- 组件间的数据和事件传递（父与子、兄弟之间、隔代之间）在一个项目中应该得到很好的控制。如果项目越做越大，组件间的操作会变得越来越难管理。vue在这方面做得有显不足，因此需要用到vuex来对大型应用进行管理，比如侧边栏和各个页面的对应关系等
+- 在缓存方面上做得工夫不足，应该增强在服务器上对用户信息的缓存（使用session缓存用户信息），以及在本地对不容易变化的数据进行缓存，减少对网络的请求次数
