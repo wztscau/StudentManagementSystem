@@ -1,5 +1,6 @@
+## 数据请求API
 | num | api | method | params | return type | return content | description |
-| :-: | :-: | :----: | :----: | :---------: | :------------: | :--------- |
+| :-: | :-: | :----: | :----: | :---------: | :------------: | :---------- |
 | 1 | /api/login | POST | uname, pwd | Json | result\<boolean\> | 检查用户名和密码是否正确，是否为禁用 |
 | 2 | /api/session | POST | id | Json | isVisit\<boolean\> | 询用户是否登录过，如登录过且session为过期，可跳过登录页面 |
 | 3 | /api/permission | GET | uname | Json | name\<string\>, role\<string\> | 根据用户id查询其角色拥有的权限 |
@@ -22,3 +23,36 @@
 | 20 | /api/get-department-info | GET | \<none\> | Array | result | 得到所有的部门信息 |
 | 21 | /api/add-department-batch | POST | name | Json | result\<boolean\> | 增加一个指定部门的批数 |
 | 22 | /api/push-to-top | POST | name, title, up | Json | result\<boolean\> | 将一篇指定的文章置顶 |
+## 数据库CRUD API
+### INSERT
+usage: new BaseDao().insert(settings)
+
+| setting | type | extras | sample |
+| :-----: | :--: | :----: | :----: |
+| $table | String | \<none\> | $table: 'tableName' |
+| [anykey] | String/Number/Boolean | \<none\> | uname: 'zhangsan', age: 12 |
+### SELECT
+usage: new BaseDao().select(settings)
+
+| setting | type | extras | sample |
+| :-----: | :--: | :----- | :----- |
+| $table | String/Array | name\<string\>, join\<string\>, on\<object,string\><br>on: {<br>table\<string\>, value\<string\>, prevValue\<string\><br>} | $table: 'tableName'<hr>$table: [{<br>name: 'tableName1'<br>}, {<br>name: 'tableName2',<br>on: {<br>table: 'otherTableName',<br>value: 'id',<br>prevValue: 'name'<br>}<br>}] |
+| $where | Object/Array | name\<string\>, value\<string\>, relation\<string\>, compare\<string\>, forceText\<boolean\> | $where: {<br>name: 'zhangsan'<br>}<hr>$where: [{<br>name: 'name', value: 'zhangsan'}, {<br>name: 'id', value: '123', relation: 'and'<br>}] |
+| $order_by | String/Object/Array | value\<string\>, by\<string\> | $order_by: 'id'<hr>$order_by: {<br>value: 'id',by: 'asc'<br>}<hr>$order_by: [{<br>value: 'id',by: 'desc'<br>},{<br>value: 'name', by: 'asc'<br>}] |
+| $group_by | String/Array | \<none\> | $group_by: 'department'<hr>$group_by: ['department', 'article'] |
+| $limit | Number/Array | \<none\> | $limit: 5<hr>$limit: [2,5] |
+### UPDATE
+usage: new BaseDao().update(settings)
+
+| setting | type | extras | sample |
+| :-----: | :--: | :----: | :----: |
+| $table | String | \<none\> | $table: 'tableName' |
+| $set | Object | [anykey]: [anyvalue] | $set: {name: 'zhangsan'} |
+| $where | !! saw $where in SELECT | !! saw $where in SELECT | !! saw $where in SELECT |
+### DELETE
+usage: new BaseDao().delete(settings)
+
+| setting | type | extras | sample |
+| :-----: | :--: | :----: | :----: |
+| $table | String | \<none\> | $table: 'tableName' |
+| $where | !! saw $where in SELECT | !! saw $where in SELECT | !! saw $where in SELECT |
