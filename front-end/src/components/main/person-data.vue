@@ -75,7 +75,7 @@
             formData[9].input = info.qq
             formData[10]['input.email'] = info.email
 
-            this.headSrc = info.head
+            this.headSrc = info.head || 'not found'
           })
       }
     },

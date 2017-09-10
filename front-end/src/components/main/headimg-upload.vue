@@ -10,7 +10,7 @@
     <div id="img-result" class="def-bg"></div>
     <div class="mask dark max mask-center" v-if="cropping">
       <div class="img-container">
-        <img ref="img-crop"/>
+        <img ref="img-crop" />
         <button class="btn btn-primary btn-block" @click="cropImage()">确定</button>
       </div>
     </div>
@@ -147,7 +147,7 @@
     height: 200px;
   }
   .def-bg {
-    background-image: url('../../assets/img/nopic.jpg');
+    background-image: url(http://119.23.12.88/static/img/nopic.79c42d9.jpg);
     background-repeat: no-repeat;
     background-size: contain;
   }

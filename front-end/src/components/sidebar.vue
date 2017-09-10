@@ -107,18 +107,28 @@
           .done(data => {
             this.controls = this.addExtraMenuMessage(this.parseMenuFuns(data.name))
             this.info.role = data.role
+            this.renderFinished = true
+
+            this.initTab()
           })
       },
       initUserInfo () {
         $.get(this.api.person, { uname: this.getId() })
           .done(data => {
-            this.info.head = data.info.head
+            this.info.head = data.info.head || 'not found'
             this.info.name = data.info.realname
           })
       },
       itemClick (data) {
         // 传上去
         this.$emit('item-click', data)
+      },
+      initTab () {
+        if (this.$route.path === this.getRootPath()) {
+          this.$nextTick(() => {
+            this.changeTab('最新动态')
+          })
+        }
       }
     },
     mounted () {

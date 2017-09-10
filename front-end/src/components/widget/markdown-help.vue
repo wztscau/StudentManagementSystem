@@ -161,7 +161,6 @@
     },
     mounted () {
       $(this.$el).find('a').on('click', function () {
-        console.log('c')
         $(this).parents('ul').find('div').hide()
         $(this).next('div').show()
       })

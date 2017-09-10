@@ -21,6 +21,8 @@
   import ConfirmDialog from './components/widget/confirm-dialog.vue'
   import BackToTop from './components/back-to-top.vue'
 
+  import nopic from './assets/img/nopic.jpg'
+
   export default {
     name: 'app',
     components: {
@@ -67,10 +69,9 @@
         }, query)))
       }
       Vue.prototype.onImgError = function (e) {
-        e.target.src = require('./assets/img/nopic.jpg')
+        e.target.src = nopic
       }
-      // 初始化__role，避免空指针异常
-      Object.getPrototypeOf(Object.getPrototypeOf(this)).__role__ = ''
+      // 初始化__role__，避免空指针异常
       Vue.prototype.__getRole__ = function () {
         return $.get(this.api.role)
           .then(data => {

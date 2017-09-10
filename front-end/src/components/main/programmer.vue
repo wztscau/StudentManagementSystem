@@ -30,7 +30,7 @@
     <div v-else class="row">
       <span id="btn-back" class="label label-lg label-info arrowed-in-right arrowed"
         @click="backToList()">返回</span>
-      <div class="article-side col-xs-12 col-sm-3">
+      <div class="article-side col-xs-6 col-sm-3">
         <img class="img-circle" :src="currArticle.author.head" />
         <div>总访问：{{ currArticle.author.visit }}次</div>
         <div>阅读：{{ currArticle.visit + 1 }}人</div>
@@ -72,9 +72,6 @@
       }
     },
     methods: {
-      initTab () {
-        setTimeout(() => $('[data-title="程序员世界"]').addClass('active'), 200)
-      },
       initArticleList () {
         $.get(this.api.getArticle)
           .done(data => {
@@ -87,7 +84,7 @@
                 time: getRealTime(el.publish_time),
                 visit: el.click,
                 sort: el.sort_name,
-                head: el.head,
+                head: el.head || 'not found',
                 up: el.up,
                 name: el.realname
               }
@@ -146,7 +143,6 @@
       }
     },
     mounted () {
-      this.initTab()
       this.getRole()
     }
   }

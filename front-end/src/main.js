@@ -1,7 +1,7 @@
 /*
 * @Author: wuzitao
 * @Date:   2017-07-23 22:01:56
-* @Last Modified time: 2017-09-05 14:29:04
+* @Last Modified time: 2017-09-09 17:53:50
 */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -24,6 +24,7 @@ require('./assets/ace-master/js/bootstrap-markdown.min.js')
 
 Vue.config.productionTip = false
 Vue.prototype.api = api // api转发接口
+Vue.prototype.__role__ = ''
 $.ajaxSetup(ajaxSetup) // $.ajax全局设置
 
 /* eslint-disable no-new */
@@ -38,5 +39,6 @@ new Vue({
 $($ => {
 	$(document).on('click', function (event) {
 		$('[data-rel=popover]').popover('hide')
+		$('.dropdown-menu').hide()
 	})
 })

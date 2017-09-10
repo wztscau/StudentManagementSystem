@@ -60,7 +60,6 @@
           this.showFunctionality()
           this.$router.isLogin = false
           $('body').show()
-          this.toNews()
           return
         }
         // 直接从地址栏输入，查询是否登录过
@@ -76,7 +75,6 @@
             } else {
               this.showFunctionality()
               this.shown = true
-              this.toNews()
             }
           })
           .fail(() => {
@@ -90,12 +88,6 @@
       showFunctionality (shown = true) {
         this.$parent.$refs.navbar.out = !shown
         this.shown = shown
-      },
-      toNews () {
-        // 根路径跳转到最新动态页面
-        if (/\d{10}$/.test(this.$route.path)) {
-          setTimeout(() => this.changeTab('最新动态'), 500)
-        }
       },
       changeBread (target) {
         this.breadcrumbs = [{
