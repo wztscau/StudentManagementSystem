@@ -6,6 +6,9 @@
 ## 开发环境
 Nodejs6.0.1 + Vue-cli2.8.2 + Sublime text3 + Webpack2.6.1 + Nginx1.12.1 + MySQL Server5.7
 
+## API
+[https://github.com/wztscau/StudentManagementSystem/blob/master/api.md](https://github.com/wztscau/StudentManagementSystem/blob/master/api.md)
+
 ## 框架及插件
 #### 前端：
 - vue-cli: 搭建vue环境的脚手架工具
