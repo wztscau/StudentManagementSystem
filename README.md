@@ -1,6 +1,7 @@
 # 学生管理系统（Node+Vue前后端分离的spa）
 ## 项目介绍
 &emsp;&emsp;本管理系统用的是Node+Vue前后端分离的开发模式，是一个支持多用户多窗口操作的多角色管理系统。界面采用了boostrap的响应式布局设计；数据的渲染采用了vue的数据驱动模式；前后端的数据交互采用了jQuery的ajax技术；客户端的数据保存采用了cookie（用户登录信息）和storage（用户其他信息）；服务端使用session保存了用户登录状态；服务端的数据库操作使用了一套自己封装的库，支持promise化和callback操作，以简化对拼凑sql语句的操作方式。该系统在安全方面如对敏感信息的加密以及防止sql注入上面得到很好的支持，在性能方面由于采用vue-router的hash模式缩短了页面加载时间以及减少了对网络请求的次数。另外系统在维护方面也得到很好的支持，多种复用组件可以减少对相似功能页面的重复操作。开发时使用npm run dev建立前端服务器，上线时用npm run build打包将dist文件夹部署到服务器上。
+<br>&emsp;&emsp;[项目地址](http://119.23.12.88)
 
 ## 开发环境
 Nodejs6.0.1 + Vue-cli2.8.2 + Sublime text3 + Webpack2.6.1 + Nginx1.12.1 + MySQL Server5.7
